@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Users } from "../../dummyData";
+// import { Users } from "../../dummyData";
 import Online from "./Online";
 
 const RightSideBar = () => {

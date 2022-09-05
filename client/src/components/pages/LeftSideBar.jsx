@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Users } from "../../dummyData";
+// import { Users } from "../../dummyData";
 import Friends from "./Friends";
 
 const LeftSideBar = () => {

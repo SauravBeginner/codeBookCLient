@@ -5,12 +5,12 @@ import Navbar from "../Navbar";
 import Post from "./Post";
 import CreatePost from "./CreatePost";
 import SideBar from "./SideBar";
-import { Posts } from "../../dummyData";
+//import { Posts } from "../../dummyData";
 const Profile = () => {
   const { userId } = useParams();
   const [posts, setPosts] = useState([]);
   const [user, setUser] = useState({});
-  const [cuser, setCuser] = useState({});
+
   const getPost = async () => {
     const token = localStorage.getItem("jtoken");
     if (token) {

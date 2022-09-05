@@ -115,7 +115,7 @@ const Login = () => {
               </div>
             </div>
             <div className="crt-page">
-              <a href="#">Create a Page</a>
+              <p>Create a Page</p>
               <span>for a celebrity, band or business.</span>
             </div>
           </div>

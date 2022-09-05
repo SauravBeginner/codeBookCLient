@@ -93,7 +93,7 @@ const Register = () => {
                         fd.append("password", password);
 
                         var result = await fetch(
-                          "http://localhost:5000/auth/register",
+                          "https://codebookserver.herokuapp.com/auth/register",
                           {
                             method: "POST",
                             body: fd,

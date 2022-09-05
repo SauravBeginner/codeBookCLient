@@ -8,11 +8,14 @@ const LeftSideBar = () => {
   const getUser = async () => {
     const token = localStorage.getItem("jtoken");
     if (token) {
-      const resp = await fetch(`http://localhost:5000/user/friends`, {
-        headers: {
-          Token: "Bearer " + token,
-        },
-      });
+      const resp = await fetch(
+        `https://codebookserver.herokuapp.com/user/friends`,
+        {
+          headers: {
+            Token: "Bearer " + token,
+          },
+        }
+      );
       var data = await resp.json();
       setUsers(data);
     }

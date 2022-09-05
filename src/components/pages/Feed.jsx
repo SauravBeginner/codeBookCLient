@@ -11,11 +11,14 @@ const Feed = () => {
   const getPost = async () => {
     const token = localStorage.getItem("jtoken");
     if (token) {
-      const resp = await fetch(`http://localhost:5000/post/timeline/all`, {
-        headers: {
-          Token: "Bearer " + token,
-        },
-      });
+      const resp = await fetch(
+        `https://codebookserver.herokuapp.com/post/timeline/all`,
+        {
+          headers: {
+            Token: "Bearer " + token,
+          },
+        }
+      );
 
       var data = await resp.json();
       console.log(data);

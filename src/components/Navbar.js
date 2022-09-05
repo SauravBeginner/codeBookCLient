@@ -8,11 +8,14 @@ export const Navbar = () => {
   const getUser = async () => {
     const token = localStorage.getItem("jtoken");
     if (token) {
-      var resp = await fetch("http://localhost:5000/user/finduser", {
-        headers: {
-          Token: "Bearer " + token,
-        },
-      });
+      var resp = await fetch(
+        "https://codebookserver.herokuapp.com/user/finduser",
+        {
+          headers: {
+            Token: "Bearer " + token,
+          },
+        }
+      );
 
       var data = await resp.json();
       //console.log(data);

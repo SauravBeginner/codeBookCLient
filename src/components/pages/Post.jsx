@@ -11,7 +11,7 @@ const Post = ({ post }) => {
     const token = localStorage.getItem("jtoken");
     if (token) {
       const resp = await fetch(
-        `http://localhost:5000/user/find/${post.userId}`,
+        `https://codebookserver.herokuapp.com/user/find/${post.userId}`,
         {
           headers: {
             Token: "Bearer " + token,

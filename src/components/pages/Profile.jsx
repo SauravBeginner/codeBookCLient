@@ -14,11 +14,14 @@ const Profile = () => {
   const getPost = async () => {
     const token = localStorage.getItem("jtoken");
     if (token) {
-      const resp = await fetch(`http://localhost:5000/post/profile/${userId}`, {
-        headers: {
-          Token: "Bearer " + token,
-        },
-      });
+      const resp = await fetch(
+        `https://codebookserver.herokuapp.com/post/profile/${userId}`,
+        {
+          headers: {
+            Token: "Bearer " + token,
+          },
+        }
+      );
 
       var data = await resp.json();
       //console.log(data);
@@ -28,11 +31,14 @@ const Profile = () => {
   const getUser = async () => {
     const token = localStorage.getItem("jtoken");
     if (token) {
-      var resp = await fetch(`http://localhost:5000/user/find/${userId}`, {
-        headers: {
-          Token: "Bearer " + token,
-        },
-      });
+      var resp = await fetch(
+        `https://codebookserver.herokuapp.com/user/find/${userId}`,
+        {
+          headers: {
+            Token: "Bearer " + token,
+          },
+        }
+      );
 
       var data = await resp.json();
       // console.log(data);

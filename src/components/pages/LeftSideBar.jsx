@@ -20,7 +20,7 @@ const LeftSideBar = () => {
 
   useEffect(() => {
     getUser();
-  }, []);
+  }, [users]);
 
   return (
     <>

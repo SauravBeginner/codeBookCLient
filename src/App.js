@@ -3,8 +3,8 @@ import "./style.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./components/pages/Home";
 import Profile from "./components/pages/Profile";
-import Navbar from "./components/Navbar";
-import Footer from "./components/Footer";
+// import Navbar from "./components/Navbar";
+// import Footer from "./components/Footer";
 import Login from "./components/pages/account/Login";
 import Register from "./components/pages/account/Register";
 

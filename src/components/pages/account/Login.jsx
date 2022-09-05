@@ -73,7 +73,7 @@ const Login = () => {
                       fd.append("password", password);
 
                       var result = await fetch(
-                        "http://codebookserver.herokuapp.com/auth/login",
+                        "https://codebookserver.herokuapp.com/auth/login",
                         {
                           method: "POST",
                           body: fd,

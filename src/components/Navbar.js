@@ -30,6 +30,7 @@ export const Navbar = () => {
       setUname("");
       setUser("");
       setIsLogin(false);
+      window.location = "/login";
     }
   };
 
@@ -108,10 +109,22 @@ export const Navbar = () => {
               <img src="../svg/bell.svg" alt="Notifications" />
               <span className="topbarIconBadge">1</span>
             </div>
-            <div className="svg">
-              <img src="../svg/down-arrow.svg" alt="Dropdown" />
-              <span className="topbarIconBadge">1</span>
-            </div>
+            {isLogin ? (
+              <div className="svg">
+                <button
+                  className="btn btn-danger"
+                  onClick={() => {
+                    localStorage.removeItem("jtoken");
+                    setIsLogin(false);
+                    window.location = "/login";
+                  }}
+                >
+                  <i class="fas fa-sign-out-alt"> </i>
+                </button>
+              </div>
+            ) : (
+              ""
+            )}
           </div>
         </div>
       </header>

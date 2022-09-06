@@ -25,14 +25,33 @@ const Post = ({ post }) => {
     }
   };
 
+  const likeHandler = async () => {
+    const token = localStorage.getItem("jtoken");
+
+    if (token) {
+      const requestOptions = {
+        method: "PUT",
+        headers: {
+          Token: "Bearer " + token,
+        },
+        body: JSON.stringify(post.likes.length),
+      };
+      const response = await fetch(
+        `http://localhost:5000/post/${post._id}/like`,
+        requestOptions
+      );
+      const data = await response.json();
+      const likeNumber = data.length;
+      setLike(isliked ? likeNumber - 1 : likeNumber + 1);
+      setIstLiked(!isliked);
+      console.log(data.length);
+    }
+  };
+
   useEffect(() => {
     getUser();
-  }, [post.userId]);
-
-  const likeHandler = () => {
-    setLike(isliked ? like - 1 : like + 1);
-    setIstLiked(!isliked);
-  };
+    setIstLiked(post.likes.includes(user._id));
+  }, [post.userId, post.likes, user._id]);
   return (
     <>
       <div className="my_post">

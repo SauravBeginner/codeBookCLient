@@ -37,7 +37,7 @@ const Post = ({ post }) => {
         body: JSON.stringify(post.likes.length),
       };
       const response = await fetch(
-        `http://localhost:5000/post/${post._id}/like`,
+        `https://codebookserver.herokuapp.com/post/${post._id}/like`,
         requestOptions
       );
       const data = await response.json();
